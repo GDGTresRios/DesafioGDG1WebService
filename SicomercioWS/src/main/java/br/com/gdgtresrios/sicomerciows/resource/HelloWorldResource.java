@@ -15,7 +15,7 @@ public class HelloWorldResource {
     @GET
     @Produces("application/json; charset=UTF-8")
     public String hello() {
-            return "Hello World";
+            return "Hello World Ok";
     }
     
 }
