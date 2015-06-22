@@ -11,11 +11,11 @@ import javax.ws.rs.Produces;
 
 @Path("/helloworld")
 public class HelloWorldResource {
-    
+
     @GET
     @Produces("application/json; charset=UTF-8")
-    public String hello() {
-            return "Hello World Ok";
+    public String hello() {        
+        return "Olá Mundo Google";
     }
-    
+
 }
