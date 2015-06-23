@@ -13,7 +13,6 @@ public class CategoriasEventos {
     
     private int id;
     private String nome;
-    private String logo;
 
     /**
      * @return the id
@@ -41,20 +40,6 @@ public class CategoriasEventos {
      */
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    /**
-     * @return the logo
-     */
-    public String getLogo() {
-        return logo;
-    }
-
-    /**
-     * @param logo the logo to set
-     */
-    public void setLogo(String logo) {
-        this.logo = logo;
     }
     
 }

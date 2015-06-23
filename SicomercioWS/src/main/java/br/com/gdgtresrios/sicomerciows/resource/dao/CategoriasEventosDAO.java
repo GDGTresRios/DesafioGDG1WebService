@@ -17,7 +17,7 @@ import java.sql.SQLException;
  */
 public class CategoriasEventosDAO {
 
-    private static final String SQL_SELECT_BY_ID = "SELECT id, nome, logo FROM gdg_centrosul.categorias_eventos WHERE id = ?";
+    private static final String SQL_SELECT_BY_ID = "SELECT id, nome FROM gdg_centrosul.categorias_eventos WHERE id = ?";
 
     public CategoriasEventos getCategoriasEventosByID(int id) {
 
@@ -34,7 +34,6 @@ public class CategoriasEventosDAO {
             while (rs.next()){
                 categoriasEventos.setId(rs.getInt(1));
                 categoriasEventos.setNome(rs.getString(2));
-                categoriasEventos.setLogo(rs.getString(3));
             }
             
         } catch (SQLException ex) {
