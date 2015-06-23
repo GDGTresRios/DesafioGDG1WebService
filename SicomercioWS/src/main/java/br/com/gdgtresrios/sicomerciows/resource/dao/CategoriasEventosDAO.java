@@ -21,6 +21,7 @@ public class CategoriasEventosDAO {
 
     private static final String SQL_SELECT_ALL = "SELECT id, nome FROM gdg_centrosul.categorias_eventos";
     private static final String SQL_SELECT_BY_ID = "SELECT id, nome FROM gdg_centrosul.categorias_eventos WHERE id = ?";
+    private static final String SQL_SELECT_BY_NOME = "SELECT id, nome FROM gdg_centrosul.categorias_eventos WHERE nome like ?";
 
     public CategoriasEventos getCategoriasEventosByID(int id) {
 
@@ -72,6 +73,37 @@ public class CategoriasEventosDAO {
             
         } finally {
           ConnectionFactory.close(conn, pstm, rs);  
+        }
+        
+        return categoriasEventos;
+    }
+    
+    public List<CategoriasEventos> getCategoriasEventosByNome(String nome) {
+        
+        List<CategoriasEventos> categoriasEventos = new ArrayList<>();
+        
+        Connection conn = ConnectionFactory.getConnection();
+        PreparedStatement pstm = null;
+        ResultSet rs = null;
+        
+        try {
+            pstm = conn.prepareStatement(SQL_SELECT_BY_NOME);
+            pstm.setString(1, nome + "%");
+            rs = pstm.executeQuery();
+            
+            while (rs.next()){
+                
+                CategoriasEventos ct = new CategoriasEventos();
+                ct.setId(rs.getInt("id"));
+                ct.setNome(rs.getString("nome"));
+                
+                categoriasEventos.add(ct);                
+            }
+                   
+        }catch (SQLException ex){
+            
+        }finally {
+            ConnectionFactory.close(conn, pstm, rs);
         }
         
         return categoriasEventos;

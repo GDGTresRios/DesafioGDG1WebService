@@ -26,7 +26,7 @@ import javax.ws.rs.Produces;
 public class CategoriasEventosResource {
 
     @GET
-    @Path("/categoriaevento/{id}")
+    @Path("/categoriaevento/id/{id}")
     @Produces("application/json; charset=UTF-8")
     public String getCategoriasEventosByID(@PathParam("id") int id) throws IOException {
 
@@ -42,6 +42,20 @@ public class CategoriasEventosResource {
 
         return writer.toString();
     }
+    
+    @GET
+    @Path("/categoriaevento/nome/{nome}")
+    @Produces("application/json; charset=UTF-8")
+    public String getCategoriasEventosByNome(@PathParam("nome") String nome) throws JsonProcessingException {
+        
+        CategoriasEventosDAO eventosDAO = new CategoriasEventosDAO();
+        List<CategoriasEventos> categoriasEventos = eventosDAO.getCategoriasEventosByNome(nome);
+        
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
+        
+        return  objectMapper.writeValueAsString(categoriasEventos);
+    }
 
     @GET
     @Path("/listartodos")
@@ -54,9 +68,6 @@ public class CategoriasEventosResource {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
 
-       //StringWriter writer = new StringWriter();    
-        //objectMapper.writeValue(writer, categoriasEventos);
-        //return writer.toString();
         return objectMapper.writeValueAsString(categoriasEventos);
     }
 
