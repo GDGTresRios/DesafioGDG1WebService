@@ -5,8 +5,8 @@
  */
 package br.com.gdgtresrios.sicomerciows.resource;
 
-import br.com.gdgtresrios.sicomerciows.resource.dao.ConfiguracoesDAO;
-import br.com.gdgtresrios.sicomerciows.resource.models.Configuracoes;
+import br.com.gdgtresrios.sicomerciows.resource.dao.ConfiguracaoDAO;
+import br.com.gdgtresrios.sicomerciows.resource.models.Configuracao;
 import java.util.List;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -18,15 +18,15 @@ import javax.ws.rs.core.MediaType;
  * @author Wanderlei
  */
 @Path("/configuracoes")
-public class ConfiguracoesResource {
+public class ConfiguracaoResource {
     
     @GET
     @Path("/listartodos")
      @Produces("application/json; charset=UTF-8")
-    public List<Configuracoes> getAll(){
+    public List<Configuracao> getAll(){
         
-        ConfiguracoesDAO dao = new ConfiguracoesDAO();
-        List<Configuracoes> configuracoes = dao.getAll();
+        ConfiguracaoDAO dao = new ConfiguracaoDAO();
+        List<Configuracao> configuracoes = dao.getAll();
         
         return configuracoes;
     }

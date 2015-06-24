@@ -9,7 +9,7 @@ package br.com.gdgtresrios.sicomerciows.resource.models;
  *
  * @author Wanderlei
  */
-public class CategoriasEventos {
+public class CategoriaEvento {
     
     private int id;
     private String nome;
