@@ -22,7 +22,7 @@ public class ConfiguracoesResource {
     
     @GET
     @Path("/listartodos")
-    @Produces(MediaType.APPLICATION_JSON)
+     @Produces("application/json; charset=UTF-8")
     public List<Configuracoes> getAll(){
         
         ConfiguracoesDAO dao = new ConfiguracoesDAO();
