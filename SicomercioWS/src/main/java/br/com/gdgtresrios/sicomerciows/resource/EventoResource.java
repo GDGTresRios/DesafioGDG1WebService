@@ -53,5 +53,16 @@ public class EventoResource {
         return eventos;
 
     }
+    
+    @GET
+    @Path("/evento/categoria/{idCategoria}")
+    @Produces("application/json; charset=UTF-8")
+    public List<Evento> getEventoByCategoria(@PathParam("idCategoria") int idCategoria){
+        
+        EventoDAO dao = new EventoDAO();
+        List<Evento> eventos = dao.getEventoByCategoria(idCategoria);
+        
+        return eventos;
+    }
 
 }
