@@ -5,7 +5,7 @@
  */
 package br.com.gdgtresrios.sicomerciows.resource.dao;
 
-import br.com.gdgtresrios.sicomerciows.resource.models.Configuracoes;
+import br.com.gdgtresrios.sicomerciows.resource.models.Configuracao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,13 +17,13 @@ import java.util.List;
  *
  * @author Wanderlei
  */
-public class ConfiguracoesDAO {
+public class ConfiguracaoDAO {
     
     private static final String SQL_SELECT_ALL = "SELECT id, nome, descricao, logo, mapa, endereco, telefone, versao FROM gdg_centrosul.configuracao";
     
-    public List<Configuracoes> getAll(){
+    public List<Configuracao> getAll(){
         
-        List<Configuracoes> configuracoes = new ArrayList<>();
+        List<Configuracao> configuracoes = new ArrayList<>();
         
         Connection conn = ConnectionFactory.getConnection();
         PreparedStatement pstm = null;
@@ -35,7 +35,7 @@ public class ConfiguracoesDAO {
             rs = pstm.executeQuery();
             
             while (rs.next()){
-                Configuracoes c = new Configuracoes();
+                Configuracao c = new Configuracao();
                 
                 c.setId(rs.getInt("id"));
                 c.setNome(rs.getString("nome"));

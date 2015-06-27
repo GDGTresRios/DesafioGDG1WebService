@@ -5,7 +5,7 @@
  */
 package br.com.gdgtresrios.sicomerciows.resource.dao;
 
-import br.com.gdgtresrios.sicomerciows.resource.models.CategoriasEventos;
+import br.com.gdgtresrios.sicomerciows.resource.models.CategoriaEvento;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,18 +17,18 @@ import java.util.List;
  *
  * @author Wanderlei
  */
-public class CategoriasEventosDAO {
+public class CategoriaEventoDAO {
 
     private static final String SQL_SELECT_ALL = "SELECT id, nome FROM gdg_centrosul.categorias_eventos";
     private static final String SQL_SELECT_BY_ID = "SELECT id, nome FROM gdg_centrosul.categorias_eventos WHERE id = ?";
     private static final String SQL_SELECT_BY_NOME = "SELECT id, nome FROM gdg_centrosul.categorias_eventos WHERE nome like ?";
 
-    public CategoriasEventos getCategoriasEventosByID(int id) {
+    public CategoriaEvento getCategoriasEventosByID(int id) {
 
         Connection conn = ConnectionFactory.getConnection();
         PreparedStatement pstm = null;
         ResultSet rs = null;
-        CategoriasEventos categoriasEventos = new CategoriasEventos();
+        CategoriaEvento categoriasEventos = new CategoriaEvento();
         try {
             
             pstm = conn.prepareStatement(SQL_SELECT_BY_ID);
@@ -49,9 +49,9 @@ public class CategoriasEventosDAO {
         
     }
     
-    public List<CategoriasEventos> getAll(){
+    public List<CategoriaEvento> getAll(){
         
-        List<CategoriasEventos> categoriasEventos = new ArrayList<>();
+        List<CategoriaEvento> categoriasEventos = new ArrayList<>();
         
         Connection conn = ConnectionFactory.getConnection();        
         PreparedStatement pstm = null;
@@ -63,7 +63,7 @@ public class CategoriasEventosDAO {
             
             while (rs.next()){
                 
-                CategoriasEventos ct = new CategoriasEventos();
+                CategoriaEvento ct = new CategoriaEvento();
                 ct.setId(rs.getInt("id"));
                 ct.setNome(rs.getString("nome"));
                 
@@ -78,9 +78,9 @@ public class CategoriasEventosDAO {
         return categoriasEventos;
     }
     
-    public List<CategoriasEventos> getCategoriasEventosByNome(String nome) {
+    public List<CategoriaEvento> getCategoriasEventosByNome(String nome) {
         
-        List<CategoriasEventos> categoriasEventos = new ArrayList<>();
+        List<CategoriaEvento> categoriasEventos = new ArrayList<>();
         
         Connection conn = ConnectionFactory.getConnection();
         PreparedStatement pstm = null;
@@ -93,7 +93,7 @@ public class CategoriasEventosDAO {
             
             while (rs.next()){
                 
-                CategoriasEventos ct = new CategoriasEventos();
+                CategoriaEvento ct = new CategoriaEvento();
                 ct.setId(rs.getInt("id"));
                 ct.setNome(rs.getString("nome"));
                 

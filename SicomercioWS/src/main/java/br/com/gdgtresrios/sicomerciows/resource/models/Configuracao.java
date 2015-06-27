@@ -9,7 +9,7 @@ package br.com.gdgtresrios.sicomerciows.resource.models;
  *
  * @author Wanderlei
  */
-public class Configuracoes {
+public class Configuracao {
     
     private int id;
     private String nome;
