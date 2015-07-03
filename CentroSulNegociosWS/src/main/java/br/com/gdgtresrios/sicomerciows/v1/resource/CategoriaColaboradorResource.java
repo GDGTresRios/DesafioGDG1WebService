@@ -38,7 +38,7 @@ public class CategoriaColaboradorResource {
     @GET
     @Path("/id/{id}")
     @Produces("application/json;charset=utf-8")
-    public CategoriaColaborador findById(@PathParam("id") long id){
+    public CategoriaColaborador findById(@PathParam("id") Long id){
 
         EntityManagerFactory factory = Persistence.
                 createEntityManagerFactory("gdg_centrosul");

@@ -16,7 +16,7 @@ public class Colaborador {
 
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
 
     private String nome;
 
@@ -34,21 +34,21 @@ public class Colaborador {
 
     private String endereco;
 
-    private boolean patrocinador;
+    private Boolean patrocinador;
 
-    private boolean palestrante;
+    private Boolean palestrante;
 
-    private boolean expositor;
+    private Boolean expositor;
 
     @ManyToOne
     @JoinColumn(name = "fk_categoria")
     private CategoriaColaborador categoriaColaborador;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -116,27 +116,27 @@ public class Colaborador {
         this.endereco = endereco;
     }
 
-    public boolean isPatrocinador() {
+    public Boolean isPatrocinador() {
         return patrocinador;
     }
 
-    public void setPatrocinador(boolean patrocinador) {
+    public void setPatrocinador(Boolean patrocinador) {
         this.patrocinador = patrocinador;
     }
 
-    public boolean isPalestrante() {
+    public Boolean isPalestrante() {
         return palestrante;
     }
 
-    public void setPalestrante(boolean palestrante) {
+    public void setPalestrante(Boolean palestrante) {
         this.palestrante = palestrante;
     }
 
-    public boolean isExpositor() {
+    public Boolean isExpositor() {
         return expositor;
     }
 
-    public void setExpositor(boolean expositor) {
+    public void setExpositor(Boolean expositor) {
         this.expositor = expositor;
     }
 

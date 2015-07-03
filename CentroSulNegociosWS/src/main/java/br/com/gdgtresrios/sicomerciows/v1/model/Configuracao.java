@@ -12,7 +12,7 @@ import javax.persistence.*;
 })
 public class Configuracao {
 
-    private int id;
+    private Long id;
     private String nome;
     private String descricao;
     private String logo;
@@ -24,11 +24,11 @@ public class Configuracao {
     @Id
     @Column(name = "id")
     @GeneratedValue
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -121,16 +121,4 @@ public class Configuracao {
         return true;
     }
 
-    @Override
-    public int hashCode() {
-        int result = id;
-        result = 31 * result + (nome != null ? nome.hashCode() : 0);
-        result = 31 * result + (descricao != null ? descricao.hashCode() : 0);
-        result = 31 * result + (logo != null ? logo.hashCode() : 0);
-        result = 31 * result + (mapa != null ? mapa.hashCode() : 0);
-        result = 31 * result + (endereco != null ? endereco.hashCode() : 0);
-        result = 31 * result + (telefone != null ? telefone.hashCode() : 0);
-        result = 31 * result + (versao != null ? versao.hashCode() : 0);
-        return result;
-    }
 }

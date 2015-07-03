@@ -40,7 +40,7 @@ public class CategoriaEventoResource {
     @GET
     @Path("/id/{id}")
     @Produces("application/json;charset=utf-8")
-    public CategoriaEvento findById(@PathParam("id") long id){
+    public CategoriaEvento findById(@PathParam("id") Long id){
 
         EntityManagerFactory factory = Persistence.
                 createEntityManagerFactory("gdg_centrosul");

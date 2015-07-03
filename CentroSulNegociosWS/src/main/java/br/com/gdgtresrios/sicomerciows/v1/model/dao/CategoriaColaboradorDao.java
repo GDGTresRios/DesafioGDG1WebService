@@ -25,7 +25,7 @@ public class CategoriaColaboradorDao {
         return colaboradorList;
     }
 
-    public CategoriaColaborador findById(long id){
+    public CategoriaColaborador findById(Long id){
 
         TypedQuery<CategoriaColaborador> query = entityManager
                 .createNamedQuery("CategoriaColaborador.findById", CategoriaColaborador.class)

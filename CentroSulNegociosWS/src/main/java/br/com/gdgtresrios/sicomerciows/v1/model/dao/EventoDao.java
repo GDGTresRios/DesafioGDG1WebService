@@ -24,7 +24,7 @@ public class EventoDao {
         return eventoList;
     }
 
-    public Evento findById(long id){
+    public Evento findById(Long id){
 
         TypedQuery<Evento> query = entityManager
                 .createNamedQuery("Evento.findById", Evento.class)

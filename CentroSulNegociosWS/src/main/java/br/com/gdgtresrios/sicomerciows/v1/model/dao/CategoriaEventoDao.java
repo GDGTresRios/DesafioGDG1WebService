@@ -24,7 +24,7 @@ public class CategoriaEventoDao {
 
     }
 
-    public CategoriaEvento findById(long id){
+    public CategoriaEvento findById(Long id){
 
         TypedQuery<CategoriaEvento> query = entityManager.createNamedQuery("CategoriaEvento.findById", CategoriaEvento.class)
                 .setParameter("id", id);

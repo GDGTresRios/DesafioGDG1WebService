@@ -17,7 +17,7 @@ public class Evento {
 
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
 
     private String nome;
 
@@ -40,11 +40,11 @@ public class Evento {
     @JoinColumn(name = "fk_colaborador")
     private Colaborador colaborador;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
