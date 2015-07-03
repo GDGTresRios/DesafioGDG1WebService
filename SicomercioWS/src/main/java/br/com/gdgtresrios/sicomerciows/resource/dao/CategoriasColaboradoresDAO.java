@@ -1,6 +1,6 @@
 package br.com.gdgtresrios.sicomerciows.resource.dao;
 
-import br.com.gdgtresrios.sicomerciows.resource.models.CategoriasColaboradores;
+import br.com.gdgtresrios.sicomerciows.resource.models.CategoriaColaborador;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,20 +19,20 @@ public class CategoriasColaboradoresDAO {
     private static final String SQL_SELECT_BY_ID = "SELECT id, nome, logo FROM gdg_centrosul.categorias_colaboradores WHERE id = ?";
     private static final String SQL_SELECT_BY_NOME = "SELECT id, nome, logo FROM gdg_centrosul.categorias_colaboradores WHERE nome like ?";
 
-    public CategoriasColaboradores getByID(int id) {
+    public CategoriaColaborador getByID(Long id) {
 
         Connection conn = ConnectionFactory.getConnection();
         PreparedStatement pstm = null;
         ResultSet rs = null;
-        CategoriasColaboradores categoriasColaboradores = new CategoriasColaboradores();
+        CategoriaColaborador categoriasColaboradores = new CategoriaColaborador();
         try {
 
             pstm = conn.prepareStatement(SQL_SELECT_BY_ID);
-            pstm.setInt(1, id);
+            pstm.setLong(1, id);
             rs = pstm.executeQuery();
 
             while (rs.next()) {
-                categoriasColaboradores.setId(rs.getInt("id"));
+                categoriasColaboradores.setId(rs.getLong("id"));
                 categoriasColaboradores.setNome(rs.getString("nome"));
                 categoriasColaboradores.setLogo(rs.getString("logo"));
 
@@ -47,9 +47,9 @@ public class CategoriasColaboradoresDAO {
 
     }
 
-    public List<CategoriasColaboradores> getAll() {
+    public List<CategoriaColaborador> getAll() {
 
-        List<CategoriasColaboradores> categoriasColaboradores = new ArrayList<>();
+        List<CategoriaColaborador> categoriasColaboradores = new ArrayList<>();
 
         Connection conn = ConnectionFactory.getConnection();
         PreparedStatement pstm = null;
@@ -61,8 +61,8 @@ public class CategoriasColaboradoresDAO {
 
             while (rs.next()) {
 
-                CategoriasColaboradores ct = new CategoriasColaboradores();
-                ct.setId(rs.getInt("id"));
+                CategoriaColaborador ct = new CategoriaColaborador();
+                ct.setId(rs.getLong("id"));
                 ct.setNome(rs.getString("nome"));
                 ct.setLogo(rs.getString("logo"));
 
@@ -77,9 +77,9 @@ public class CategoriasColaboradoresDAO {
         return categoriasColaboradores;
     }
 
-    public List<CategoriasColaboradores> getByNome(String nome) {
+    public List<CategoriaColaborador> getByNome(String nome) {
 
-        List<CategoriasColaboradores> categoriasColaboradores = new ArrayList<>();
+        List<CategoriaColaborador> categoriasColaboradores = new ArrayList<>();
 
         Connection conn = ConnectionFactory.getConnection();
         PreparedStatement pstm = null;
@@ -92,8 +92,8 @@ public class CategoriasColaboradoresDAO {
 
             while (rs.next()) {
 
-                CategoriasColaboradores ct = new CategoriasColaboradores();
-                ct.setId(rs.getInt("id"));
+                CategoriaColaborador ct = new CategoriaColaborador();
+                ct.setId(rs.getLong("id"));
                 ct.setNome(rs.getString("nome"));
                 ct.setLogo(rs.getString("logo"));
                 categoriasColaboradores.add(ct);

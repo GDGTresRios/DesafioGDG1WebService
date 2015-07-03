@@ -37,7 +37,7 @@ public class ConfiguracaoDAO {
             while (rs.next()){
                 Configuracao c = new Configuracao();
                 
-                c.setId(rs.getInt("id"));
+                c.setId(rs.getLong("id"));
                 c.setNome(rs.getString("nome"));
                 c.setDescricao(rs.getString("descricao"));
                 c.setLogo(rs.getString("logo"));

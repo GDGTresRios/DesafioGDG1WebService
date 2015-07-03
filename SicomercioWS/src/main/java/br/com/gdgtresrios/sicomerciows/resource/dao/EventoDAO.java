@@ -40,14 +40,14 @@ public class EventoDAO {
 
                 CategoriaEventoDAO dao = new CategoriaEventoDAO();
                 Evento e = new Evento();
-                e.setId(rs.getInt("id"));
+                e.setId(rs.getLong("id"));
                 e.setNome(rs.getString("nome"));
                 e.setDescricao(rs.getString("descricao"));
                 e.setDescricaoDetalhada(rs.getString("descricao_detalhada"));
                 e.setDataHora(rs.getDate("data_hora"));
                 e.setDuracao(rs.getTime("duracao"));
                 e.setLocal(rs.getString("local"));
-                e.setCategoriaEvento(dao.getCategoriasEventosByID(rs.getInt("fk_categoria")));
+                e.setCategoriaEvento(dao.getCategoriasEventosByID(rs.getLong("fk_categoria")));
 
                 eventos.add(e);
 
@@ -79,14 +79,14 @@ public class EventoDAO {
             while (rs.next()){
                 
                 CategoriaEventoDAO dao = new CategoriaEventoDAO();
-                evento.setId(rs.getInt("id"));
+                evento.setId(rs.getLong("id"));
                 evento.setNome(rs.getString("nome"));
                 evento.setDescricao(rs.getString("descricao"));
                 evento.setDescricaoDetalhada(rs.getString("descricao_detalhada"));
                 evento.setDataHora(rs.getDate("data_hora"));
                 evento.setDuracao(rs.getTime("duracao"));
                 evento.setLocal(rs.getString("local"));
-                evento.setCategoriaEvento(dao.getCategoriasEventosByID(rs.getInt("fk_categoria")));                  
+                evento.setCategoriaEvento(dao.getCategoriasEventosByID(rs.getLong("fk_categoria")));                  
                 
             }
             
@@ -116,14 +116,14 @@ public class EventoDAO {
             while (rs.next()){
                 Evento e = new Evento();
                 CategoriaEventoDAO dao = new CategoriaEventoDAO();
-                e.setId(rs.getInt("id"));
+                e.setId(rs.getLong("id"));
                 e.setNome(rs.getString("nome"));
                 e.setDescricao(rs.getString("descricao"));
                 e.setDescricaoDetalhada(rs.getString("descricao_detalhada"));
                 e.setDataHora(rs.getDate("data_hora"));
                 e.setDuracao(rs.getTime("duracao"));
                 e.setLocal(rs.getString("local"));
-                e.setCategoriaEvento(dao.getCategoriasEventosByID(rs.getInt("fk_categoria")));  
+                e.setCategoriaEvento(dao.getCategoriasEventosByID(rs.getLong("fk_categoria")));  
                 eventos.add(e);
                 
             }
@@ -155,14 +155,14 @@ public class EventoDAO {
                 Evento e = new Evento();
                 CategoriaEventoDAO dao = new CategoriaEventoDAO();
                 
-                e.setId(rs.getInt("id"));
+                e.setId(rs.getLong("id"));
                 e.setNome(rs.getString("nome"));
                 e.setDescricao(rs.getString("descricao"));
                 e.setDescricaoDetalhada(rs.getString("descricao_detalhada"));
                 e.setDataHora(rs.getDate("data_hora"));
                 e.setDuracao(rs.getTime("duracao"));
                 e.setLocal(rs.getString("local"));
-                e.setCategoriaEvento(dao.getCategoriasEventosByID(rs.getInt("fk_categoria")));  
+                e.setCategoriaEvento(dao.getCategoriasEventosByID(rs.getLong("fk_categoria")));  
                 eventos.add(e);                
                 
             }

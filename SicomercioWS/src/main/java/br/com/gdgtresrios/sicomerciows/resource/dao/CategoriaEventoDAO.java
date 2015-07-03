@@ -23,7 +23,7 @@ public class CategoriaEventoDAO {
     private static final String SQL_SELECT_BY_ID = "SELECT id, nome FROM gdg_centrosul.categorias_eventos WHERE id = ?";
     private static final String SQL_SELECT_BY_NOME = "SELECT id, nome FROM gdg_centrosul.categorias_eventos WHERE nome like ?";
 
-    public CategoriaEvento getCategoriasEventosByID(int id) {
+    public CategoriaEvento getCategoriasEventosByID(Long id) {
 
         Connection conn = ConnectionFactory.getConnection();
         PreparedStatement pstm = null;
@@ -32,11 +32,11 @@ public class CategoriaEventoDAO {
         try {
             
             pstm = conn.prepareStatement(SQL_SELECT_BY_ID);
-            pstm.setInt(1, id);
+            pstm.setLong(1, id);
             rs = pstm.executeQuery();
             
             while (rs.next()){
-                categoriasEventos.setId(rs.getInt("id"));
+                categoriasEventos.setId(rs.getLong("id"));
                 categoriasEventos.setNome(rs.getString("nome"));
             }
             
@@ -64,7 +64,7 @@ public class CategoriaEventoDAO {
             while (rs.next()){
                 
                 CategoriaEvento ct = new CategoriaEvento();
-                ct.setId(rs.getInt("id"));
+                ct.setId(rs.getLong("id"));
                 ct.setNome(rs.getString("nome"));
                 
                 categoriasEventos.add(ct);
@@ -94,7 +94,7 @@ public class CategoriaEventoDAO {
             while (rs.next()){
                 
                 CategoriaEvento ct = new CategoriaEvento();
-                ct.setId(rs.getInt("id"));
+                ct.setId(rs.getLong("id"));
                 ct.setNome(rs.getString("nome"));
                 
                 categoriasEventos.add(ct);                

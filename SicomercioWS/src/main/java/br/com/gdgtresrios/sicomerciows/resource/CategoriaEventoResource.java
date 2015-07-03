@@ -24,7 +24,7 @@ public class CategoriaEventoResource {
     @GET
     @Path("/categoriaevento/id/{id}")
     @Produces("application/json; charset=UTF-8")
-    public CategoriaEvento getCategoriasEventosByID(@PathParam("id") int id) throws IOException {
+    public CategoriaEvento getCategoriasEventosByID(@PathParam("id") Long id) throws IOException {
 
         CategoriaEventoDAO eventosDAO = new CategoriaEventoDAO();
         CategoriaEvento categoriasEventos = eventosDAO.getCategoriasEventosByID(id);
