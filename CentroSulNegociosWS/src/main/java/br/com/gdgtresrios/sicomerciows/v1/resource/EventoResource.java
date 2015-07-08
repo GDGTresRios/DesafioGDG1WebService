@@ -64,4 +64,18 @@ public class EventoResource {
 
         return eventoDao.findByNome(nome);
     }
+
+    @GET
+    @Path("/categoria/{id}")
+    @Produces("application/json;charset=utf-8")
+    public List<Evento> findByCategoria(@PathParam("id") Long id){
+
+        EntityManagerFactory factory = Persistence
+                .createEntityManagerFactory("gdg_centrosul");
+        EntityManager em = factory.createEntityManager();
+
+        eventoDao = new EventoDao(em);
+
+        return eventoDao.findByCategoria(id);
+    }
 }

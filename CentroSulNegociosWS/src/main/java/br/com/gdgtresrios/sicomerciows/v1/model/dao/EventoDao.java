@@ -44,4 +44,14 @@ public class EventoDao {
         return eventoList;
 
     }
+
+    public List<Evento> findByCategoria(Long id){
+
+        TypedQuery<Evento> query = entityManager
+                .createNamedQuery("Evento.findByCategoria", Evento.class)
+                .setParameter("id", id);
+        List<Evento> eventoList = query.getResultList();
+
+        return eventoList;
+    }
 }

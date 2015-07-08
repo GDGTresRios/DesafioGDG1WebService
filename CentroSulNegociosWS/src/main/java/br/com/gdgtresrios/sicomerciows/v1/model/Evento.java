@@ -11,7 +11,8 @@ import java.util.Date;
 @NamedQueries({
         @NamedQuery(name = "Evento.findAll", query = "select e from Evento e"),
         @NamedQuery(name = "Evento.findById", query = "select e from Evento e where e.id = :id"),
-        @NamedQuery(name = "Evento.findByNome", query = "select e from Evento e where e.nome like :nome")
+        @NamedQuery(name = "Evento.findByNome", query = "select e from Evento e where e.nome like :nome"),
+        @NamedQuery(name = "Evento.findByCategoria", query = "select  e from Evento e where e.categoriaEvento.id = :id")
 })
 public class Evento {
 
