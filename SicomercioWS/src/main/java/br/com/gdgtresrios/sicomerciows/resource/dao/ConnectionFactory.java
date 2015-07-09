@@ -19,7 +19,7 @@ public class ConnectionFactory {
 
     private static final String JDBC_URL = "jdbc:mysql://localhost:3306/gdg_centrosul";
     private static final String JDBC_USER = "root";
-    private static final String JDBC_PASS = "12345678";
+    private static final String JDBC_PASS = "";
     private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
 
     public static final Connection getConnection() {
