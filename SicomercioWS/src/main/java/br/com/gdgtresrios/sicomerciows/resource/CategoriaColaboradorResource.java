@@ -6,7 +6,7 @@ package br.com.gdgtresrios.sicomerciows.resource;
  * @author Fernando Souza
  */
 import br.com.gdgtresrios.sicomerciows.resource.dao.CategoriasColaboradoresDAO;
-import br.com.gdgtresrios.sicomerciows.resource.models.CategoriasColaboradores;
+import br.com.gdgtresrios.sicomerciows.resource.models.CategoriaColaborador;
 import java.io.IOException;
 import java.util.List;
 import javax.ws.rs.GET;
@@ -15,15 +15,15 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 @Path("/categoriascolaboradores")
-public class CategoriasColaboradoresResource {
+public class CategoriaColaboradorResource {
 
     @GET
     @Path("/categoriacolaborador/id/{id}")
     @Produces("application/json; charset=UTF-8")
-    public CategoriasColaboradores getByID(@PathParam("id") int id) throws IOException {
+    public CategoriaColaborador getByID(@PathParam("id") Long id) throws IOException {
 
         CategoriasColaboradoresDAO colaboradoresDAO = new CategoriasColaboradoresDAO();
-        CategoriasColaboradores categoriasColaboradores = colaboradoresDAO.getByID(id);
+        CategoriaColaborador categoriasColaboradores = colaboradoresDAO.getByID(id);
 
         return categoriasColaboradores;
 
@@ -32,10 +32,10 @@ public class CategoriasColaboradoresResource {
     @GET
     @Path("/categoriacolaborador/nome/{nome}")
     @Produces("application/json; charset=UTF-8")
-    public List<CategoriasColaboradores> getByNome(@PathParam("nome") String nome) {
+    public List<CategoriaColaborador> getByNome(@PathParam("nome") String nome) {
 
         CategoriasColaboradoresDAO colaboradoresDAO = new CategoriasColaboradoresDAO();
-        List<CategoriasColaboradores> categoriasColaboradores = colaboradoresDAO.getByNome(nome);
+        List<CategoriaColaborador> categoriasColaboradores = colaboradoresDAO.getByNome(nome);
 
         return categoriasColaboradores;
 
@@ -44,10 +44,10 @@ public class CategoriasColaboradoresResource {
     @GET
     @Path("/listartodos")
     @Produces("application/json; charset=UTF-8")
-    public List<CategoriasColaboradores> getAll() throws IOException {
+    public List<CategoriaColaborador> getAll() throws IOException {
 
         CategoriasColaboradoresDAO colaboradoresDAO = new CategoriasColaboradoresDAO();
-        List<CategoriasColaboradores> categoriasColaboradores = colaboradoresDAO.getAll();
+        List<CategoriaColaborador> categoriasColaboradores = colaboradoresDAO.getAll();
 
         return categoriasColaboradores;
 

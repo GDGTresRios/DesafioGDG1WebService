@@ -11,7 +11,7 @@ package br.com.gdgtresrios.sicomerciows.resource.models;
  */
 public class Configuracao {
     
-    private int id;
+    private Long id;
     private String nome;
     private String descricao;
     private String logo;
@@ -23,14 +23,14 @@ public class Configuracao {
     /**
      * @return the id
      */
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
     /**
      * @param id the id to set
      */
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

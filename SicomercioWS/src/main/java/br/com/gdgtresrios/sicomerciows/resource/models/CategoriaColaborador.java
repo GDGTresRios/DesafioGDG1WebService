@@ -5,23 +5,23 @@ package br.com.gdgtresrios.sicomerciows.resource.models;
  * fernandosouzaconceicao@gmail.com
  * @author Fernando Souza
  */
-public class CategoriasColaboradores {
+public class CategoriaColaborador {
     
-    private int id;
+    private Long id;
     private String nome;
     private String logo;
 
     /**
      * @return the id
      */
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
     /**
      * @param id the id to set
      */
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
