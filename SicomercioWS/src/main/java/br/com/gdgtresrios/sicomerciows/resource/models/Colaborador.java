@@ -5,9 +5,9 @@ package br.com.gdgtresrios.sicomerciows.resource.models;
  *
  * @author Luciano Junior
  */
-public class Colaboradores {
+public class Colaborador {
 
-    private int id;
+    private Long id;
     private String nome;
     private String descricao;
     private String logo;
@@ -16,16 +16,16 @@ public class Colaboradores {
     private String email;
     private String telefone;
     private String endereco;
-    private int patrocinador; 
-    private int palestrante;
-    private int expositor;
-    private CategoriasColaboradores categoriaColaboradores;
+    private Long patrocinador; 
+    private Long palestrante;
+    private Long expositor;
+    private CategoriaColaborador categoriaColaboradores;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -93,35 +93,35 @@ public class Colaboradores {
         this.endereco = endereco;
     }
 
-    public int getPatrocinador() {
+    public Long getPatrocinador() {
         return patrocinador;
     }
 
-    public void setPatrocinador(int patrocinador) {
+    public void setPatrocinador(Long patrocinador) {
         this.patrocinador = patrocinador;
     }
 
-    public int getPalestrante() {
+    public Long getPalestrante() {
         return palestrante;
     }
 
-    public void setPalestrante(int palestrante) {
+    public void setPalestrante(Long palestrante) {
         this.palestrante = palestrante;
     }
 
-    public int getExpositor() {
+    public Long getExpositor() {
         return expositor;
     }
 
-    public void setExpositor(int expositor) {
+    public void setExpositor(Long expositor) {
         this.expositor = expositor;
     }
 
-    public CategoriasColaboradores getCategoriaColaboradores() {
+    public CategoriaColaborador getCategoriaColaboradores() {
         return categoriaColaboradores;
     }
 
-    public void setCategoriaColaboradores(CategoriasColaboradores categoriaColaboradores) {
+    public void setCategoriaColaboradores(CategoriaColaborador categoriaColaboradores) {
         this.categoriaColaboradores = categoriaColaboradores;
     }
 
