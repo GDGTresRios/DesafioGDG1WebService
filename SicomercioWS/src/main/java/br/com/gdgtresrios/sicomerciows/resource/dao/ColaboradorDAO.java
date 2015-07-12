@@ -28,7 +28,7 @@ public class ColaboradorDAO {
         PreparedStatement pstm = null;
         ResultSet rs = null;
         Colaborador c = null;
-        CategoriasColaboradoresDAO ccDao = null;
+        CategoriaColaboradorDAO ccDao = null;
 
         try {
             pstm = conn.prepareStatement(SQL_SELECT_ALL);
@@ -36,7 +36,7 @@ public class ColaboradorDAO {
 
             while (rs.next()) {
                 c = new Colaborador();
-                ccDao = new CategoriasColaboradoresDAO();
+                ccDao = new CategoriaColaboradorDAO();
                 c.setId(rs.getLong("id"));
                 c.setNome(rs.getString("nome"));
                 c.setDescricao(rs.getString("descricao"));
@@ -80,7 +80,7 @@ public class ColaboradorDAO {
 
             while (rs.next()) {
 
-                CategoriasColaboradoresDAO ccDao = new CategoriasColaboradoresDAO();
+                CategoriaColaboradorDAO ccDao = new CategoriaColaboradorDAO();
                 c.setId(rs.getLong("id"));
                 c.setNome(rs.getString("nome"));
                 c.setDescricao(rs.getString("descricao"));
@@ -113,7 +113,7 @@ public class ColaboradorDAO {
         PreparedStatement pstm = null;
         ResultSet rs = null;
         Colaborador c = null;
-        CategoriasColaboradoresDAO ccDao = null;
+        CategoriaColaboradorDAO ccDao = null;
 
         try {
 
@@ -123,7 +123,7 @@ public class ColaboradorDAO {
 
             while (rs.next()) {
                 c = new Colaborador();
-                ccDao = new CategoriasColaboradoresDAO();
+                ccDao = new CategoriaColaboradorDAO();
                 c.setId(rs.getLong("id"));
                 c.setNome(rs.getString("nome"));
                 c.setDescricao(rs.getString("descricao"));
@@ -158,7 +158,7 @@ public class ColaboradorDAO {
         PreparedStatement pstm = null;
         ResultSet rs = null;
         Colaborador c = null;
-        CategoriasColaboradoresDAO ccDao = null;
+        CategoriaColaboradorDAO ccDao = null;
         
         try {
 
@@ -168,7 +168,7 @@ public class ColaboradorDAO {
 
             while (rs.next()) {
                 c = new Colaborador();
-                ccDao = new CategoriasColaboradoresDAO();
+                ccDao = new CategoriaColaboradorDAO();
                 c.setId(rs.getLong("id"));
                 c.setNome(rs.getString("nome"));
                 c.setDescricao(rs.getString("descricao"));

@@ -13,7 +13,7 @@ import java.util.List;
  * fernandosouzaconceicao@gmail.com
  * @author Fernando Souza
  */
-public class CategoriasColaboradoresDAO {
+public class CategoriaColaboradorDAO {
 
     private static final String SQL_SELECT_ALL = "SELECT id, nome, logo FROM gdg_centrosul.categorias_colaboradores";
     private static final String SQL_SELECT_BY_ID = "SELECT id, nome, logo FROM gdg_centrosul.categorias_colaboradores WHERE id = ?";

@@ -5,7 +5,7 @@ package br.com.gdgtresrios.sicomerciows.resource;
  * fernandosouzaconceicao@gmail.com
  * @author Fernando Souza
  */
-import br.com.gdgtresrios.sicomerciows.resource.dao.CategoriasColaboradoresDAO;
+import br.com.gdgtresrios.sicomerciows.resource.dao.CategoriaColaboradorDAO;
 import br.com.gdgtresrios.sicomerciows.resource.models.CategoriaColaborador;
 import java.io.IOException;
 import java.util.List;
@@ -22,7 +22,7 @@ public class CategoriaColaboradorResource {
     @Produces("application/json; charset=UTF-8")
     public CategoriaColaborador getByID(@PathParam("id") Long id) throws IOException {
 
-        CategoriasColaboradoresDAO colaboradoresDAO = new CategoriasColaboradoresDAO();
+        CategoriaColaboradorDAO colaboradoresDAO = new CategoriaColaboradorDAO();
         CategoriaColaborador categoriasColaboradores = colaboradoresDAO.getByID(id);
 
         return categoriasColaboradores;
@@ -34,7 +34,7 @@ public class CategoriaColaboradorResource {
     @Produces("application/json; charset=UTF-8")
     public List<CategoriaColaborador> getByNome(@PathParam("nome") String nome) {
 
-        CategoriasColaboradoresDAO colaboradoresDAO = new CategoriasColaboradoresDAO();
+        CategoriaColaboradorDAO colaboradoresDAO = new CategoriaColaboradorDAO();
         List<CategoriaColaborador> categoriasColaboradores = colaboradoresDAO.getByNome(nome);
 
         return categoriasColaboradores;
@@ -46,7 +46,7 @@ public class CategoriaColaboradorResource {
     @Produces("application/json; charset=UTF-8")
     public List<CategoriaColaborador> getAll() throws IOException {
 
-        CategoriasColaboradoresDAO colaboradoresDAO = new CategoriasColaboradoresDAO();
+        CategoriaColaboradorDAO colaboradoresDAO = new CategoriaColaboradorDAO();
         List<CategoriaColaborador> categoriasColaboradores = colaboradoresDAO.getAll();
 
         return categoriasColaboradores;
