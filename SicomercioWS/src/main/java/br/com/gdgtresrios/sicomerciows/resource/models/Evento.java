@@ -1,18 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.gdgtresrios.sicomerciows.resource.models;
 
 import java.util.Date;
 
 /**
- *
+ * 
+ * Revisão Fernando 11/07/2015
  * @author Wanderlei
  */
 public class Evento {
-    
+
     private Long id;
     private String nome;
     private String descricao;
@@ -21,6 +17,7 @@ public class Evento {
     private Date duracao;
     private String local;
     private CategoriaEvento categoriaEvento;
+    private Colaborador colaborador;
 
     /**
      * @return the id
@@ -133,5 +130,20 @@ public class Evento {
     public void setCategoriaEvento(CategoriaEvento categoriaEvento) {
         this.categoriaEvento = categoriaEvento;
     }
-    
+
+    /**
+     * @return the colaborador
+     */
+    public Colaborador getColaborador() {
+        return colaborador;
+    }
+
+    /**
+     * @param colaborador the colaborador to set
+     */
+    public void setColaborador(Colaborador colaborador) {
+        this.colaborador = colaborador;
+    }
+
+
 }
